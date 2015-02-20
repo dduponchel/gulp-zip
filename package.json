@@ -30,7 +30,7 @@
   "dependencies": {
     "chalk": "^0.5.1",
     "gulp-util": "^3.0.0",
-    "jszip": "^2.4.0",
+    "jszip": "git://github.com/dduponchel/jszip.git#wip_unix_mode",
     "through2": "^0.6.1"
   },
   "devDependencies": {

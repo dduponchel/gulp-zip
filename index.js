@@ -36,6 +36,7 @@ module.exports = function (filename, opts) {
 
 		zip.file(pathname, file.contents, {
 			date: file.stat ? file.stat.mtime : new Date(),
+			unixPermissions: file.stat ? file.stat.mode : null,
 			createFolders: true
 		});
 
@@ -53,6 +54,7 @@ module.exports = function (filename, opts) {
 			contents: zip.generate({
 				type: 'nodebuffer',
 				compression: opts.compress ? 'DEFLATE' : 'STORE',
+				platform: process.platform,
 				comment: opts.comment
 			})
 		}));
